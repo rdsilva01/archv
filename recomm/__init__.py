@@ -10,19 +10,20 @@ __email__ = 'your_email@example.com'
 
 # News retrieval functionalities
 from .news_retrieval.fetch_news_articles import get_past_urls, get_news_articles_urls, get_news_articles_data
-from .news_retrieval.process_news_articles import process_news
+from .news_retrieval.process_news_articles import extract_keywords, extract_keywords_news_articles, extract_named_entities, extract_named_entities_news_articles, get_embeddings_bert, get_news_articles_embeddings
 
 # Recommendation system functionalities
-from .recommendation_system.recommend import generate_recommendations, calculate_similarity_score
-from .recommendation_system.redis_service import connect_to_redis, get_redis_data
+from .recommendation_system.recommend import get_news_articles_similarity
+from .recommendation_system.redis_service import connect_redis, drop_data, drop_index, create_index, index_documents, populate
 
 # Auxiliary functions
 from .aux import verify
 from .redis_module import populate_db, populate_embeddings
 
-# Optional: Define what gets imported with 'from recom import *'
 __all__ = [
-    'get_past_urls', 'get_news_articles_urls', 'get_news_articles_data', 
-    'process_news', 'generate_recommendations', 'calculate_similarity_score',
-    'connect_to_redis', 'get_redis_data', 'verify', 'populate_db', 'populate_embeddings'
+    'get_past_urls', 'get_news_articles_urls', 'get_news_articles_data',
+    'extract_keywords', 'extract_keywords_news_articles', 'extract_named_entities',
+    'extract_named_entities_news_articles', 'get_embeddings_bert', 'get_news_articles_embeddings',
+    'get_news_articles_similarity', 'connect_redis', 'drop_data', 'drop_index',
+    'create_index', 'index_documents', 'populate', 'verify', 'populate_db', 'populate_embeddings'
 ]

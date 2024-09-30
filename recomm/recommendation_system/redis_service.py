@@ -7,7 +7,7 @@ from redis.commands.search.indexDefinition import IndexDefinition
 host = "localhost"
 port = 6379
 
-def connect_redis():    
+def connect_redis(host, port):    
     r = redis.Redis(
             host=host,
             port=port,
