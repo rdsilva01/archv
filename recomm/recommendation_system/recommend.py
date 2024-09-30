@@ -6,8 +6,6 @@ import torch
 import numpy as np
 import redis
 
-from recommendation_system import redis_service
-
 from transformers import AutoTokenizer, AutoModel
 from chunkipy import TextChunker, TokenEstimator
 from math import sqrt 
