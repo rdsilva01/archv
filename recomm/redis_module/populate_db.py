@@ -8,7 +8,7 @@ import os
 from redis.commands.search.field import TextField, NumericField, VectorField
 from redis.commands.search.indexDefinition import IndexDefinition
 
-from redis_module import redis_aux
+from . import redis_aux
 
 # def index_documents(r, doc_prefix, documents):
 #     for i, doc in enumerate(documents):
