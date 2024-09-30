@@ -21,7 +21,7 @@ setup(
     description='A news recommendation system',  # Short description
     long_description=open('README.md').read(),   # Readme as long description
     long_description_content_type='text/markdown',
-    url='https://github.com/rdsilva01/recom',  # GitHub URL
+    url='https://github.com/rdsilva01/recomm',  # GitHub URL
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
