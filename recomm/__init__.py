@@ -10,7 +10,7 @@ __email__ = 'your_email@example.com'
 
 # News retrieval functionalities
 from .news_retrieval.fetch_news_articles import get_past_urls, get_news_articles_urls, get_news_articles_data
-from .news_retrieval.process_news_articles import extract_keywords, extract_keywords_news_articles, extract_named_entities, extract_named_entities_news_articles, get_embeddings_bert, get_news_articles_embeddings
+from .news_retrieval.process_news_articles import extract_keywords, extract_keywords_news_articles, extract_named_entities, extract_named_entities_news_articles, get_embeddings_bert, get_news_articles_embeddings, get_text_to_speech
 
 # Recommendation system functionalities
 from .recommendation_system.recommend import get_news_articles_similarity
