@@ -5,6 +5,8 @@ import yake
 import spacy
 import torch
 import numpy as np
+import text_to_speech as tts
+
 from transformers import AutoTokenizer, AutoModel
 
 def extract_keywords(text: str, max_ngram_size=1, language="pt", num_of_kw=10, kw_extractor="yake"):
@@ -207,3 +209,40 @@ def get_news_articles_embeddings(news_articles: list, year: str, filename: str, 
     with open(full_path, 'w', encoding='utf-8') as fp:
         print("Saved at", full_path)
         json.dump(embeddings_list, fp, indent=4, ensure_ascii=False)
+
+
+def get_text_to_speech(tts_type: str, text: str, language: str, output_file: str):
+    '''
+    Converts input text into speech and saves it as an MP3 file.
+    
+    Args:
+        tts_type (str): Type of text-to-speech engine ('text-to-speech', 'gcloud-tts', 'other-tts').
+        text (str): The text that will be converted to speech.
+        language (str): Language in IETF tag format (e.g., 'en' for English, 'pt' for Portuguese).
+        output_file (str): Path to the output MP3 file. Must end with '.mp3'.
+
+    Supported engines:
+    - 'text-to-speech': Uses the text-to-speech PyPI package.
+    - 'gcloud-tts': Placeholder for future Google Cloud TTS implementation.
+    - 'other-tts': Placeholder for any other TTS engine that might be added in the future.
+    
+    Raises:
+        ValueError: If the `output_file` does not end with '.mp3'.
+    '''
+
+    if not output_file.endswith('.mp3'):
+        raise ValueError("Output file must have a .mp3 extension.")
+
+    if tts_type == 'text-to-speech':
+        tts.save(text, language, file=output_file)
+        print(f"Text-to-speech conversion complete. Saved as {output_file}")
+    
+    elif tts_type == 'gcloud-tts':
+        print("Google Cloud TTS is not implemented yet.")
+    
+    elif tts_type == 'other-tts':
+        print("Other TTS engine is not implemented yet.")
+    
+    else:
+        raise ValueError(f"Unsupported TTS type: {tts_type}")
+    

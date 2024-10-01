@@ -16,6 +16,7 @@ setup(
         'transformers',
         'redis',
         'chunkipy',
+        'text_to_speech',
     ],
     author='rdsilva01',                    # Your name
     description='A news recommendation system',  # Short description
