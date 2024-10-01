@@ -1,6 +1,6 @@
-# ?
+# recomm
 
-? is a Python package created to retrieve, process, and perform Natural Language Processing (NLP) on news articles. This package includes modules for extracting news information, embedding generation, and the creation of a recommendation system of news articles by implementing a Redis VSS backend.
+recomm is a Python package created to retrieve, process, and perform Natural Language Processing (NLP) on news articles. This package includes modules for extracting news information, embedding generation, and the creation of a recommendation system of news articles by implementing a Redis VSS backend.
 
 ## Table of Contents
 - [Installation](#installation)
