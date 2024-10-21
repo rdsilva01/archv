@@ -1,15 +1,15 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='recomm',            
-    version='0.1.0',                       # Version
-    packages=find_packages(),              # Automatically find packages
+    name='archv',            
+    version='0.1.0',                       
+    packages=find_packages(),              
     install_requires=[
         'requests',
         'beautifulsoup4',
-        'publicnewsarchive',
+        'git+https://github.com/diogocorreia01/PublicNewsArchive',
         'clean-text',
-        'yake',
+        'git+https://github.com/LIAAD/yake',
         'spacy',
         'torch',
         'numpy',
@@ -18,11 +18,11 @@ setup(
         'chunkipy',
         'text_to_speech',
     ],
-    author='rdsilva01',                    # Your name
-    description='A news recommendation system',  # Short description
-    long_description=open('README.md').read(),   # Readme as long description
+    author='rdsilva01',                    
+    description='Preservation and Recommendation of Digital Newspapers Data',  
+    long_description=open('README.md').read(),  
     long_description_content_type='text/markdown',
-    url='https://github.com/rdsilva01/recomm',  # GitHub URL
+    url='https://github.com/rdsilva01/archv', 
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',

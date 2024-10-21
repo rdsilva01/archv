@@ -3,8 +3,8 @@ recom is a package that provides functionalities for news article recommendation
 '''
 
 __version__ = '0.1.0'
-__author__ = 'Your Name'
-__email__ = 'your_email@example.com'
+__author__ = 'Rodrigo Silva'
+__email__ = 'rd.silva@ubi.pt'
 
 # Importing necessary modules and functionalities
 
