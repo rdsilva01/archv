@@ -247,7 +247,7 @@ def get_text_to_speech(tts_type: str, text: str, language: str, output_file: str
         raise ValueError(f"Unsupported TTS type: {tts_type}")
     
     
-def get_news_articles_tts(news_articles: list, year: str, keys: list, language: str):
+def get_news_articles_tts(tts_type: str, news_articles: list, year: str, keys: list, language: str):
     start_time = time.time()  
     for i in range(len(news_articles)):
         key_parts = ". ".join(
@@ -256,8 +256,8 @@ def get_news_articles_tts(news_articles: list, year: str, keys: list, language: 
 
         if not os.path.exists(f"data/{year}/"):
             os.makedirs(f"data/{year}/")
-        filename = f'data/{year}/{news_articles[i]['nid']}.mp3'
-        get_text_to_speech(tts_type="text-to-speech", text=text, language=language, output_file=filename)
+        filename = f"data/{year}/{news_articles[i]['nid']}.mp3"
+        get_text_to_speech(tts_type=tts_type, text=text, language=language, output_file=filename)
 
         if i != 0 and i % 1 == 0: 
             elapsed_time = time.time() - start_time
