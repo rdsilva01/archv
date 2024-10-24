@@ -7,9 +7,7 @@ setup(
     install_requires=[
         'requests',
         'beautifulsoup4',
-        'git+https://github.com/diogocorreia01/PublicNewsArchive',
         'clean-text',
-        'git+https://github.com/LIAAD/yake',
         'spacy',
         'torch',
         'numpy',
@@ -17,6 +15,10 @@ setup(
         'redis',
         'chunkipy',
         'text_to_speech',
+    ],
+    dependency_links=[
+        'git+https://github.com/diogocorreia01/PublicNewsArchive@main#egg=PublicNewsArchive',
+        'git+https://github.com/LIAAD/yake@master#egg=yake',
     ],
     author='rdsilva01',                    
     description='Preservation and Recommendation of Digital Newspapers Data',  

@@ -95,7 +95,6 @@ def main():
             with open(news_articles_file, 'r') as f:
                 news_articles = json.load(f)
 
-            # Process keywords and named entities
             process_news_articles.extract_keywords_news_articles(
                 news_articles=news_articles,
                 year=year,
