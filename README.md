@@ -6,7 +6,6 @@ archv is a Python package created to retrieve, process, and perform Natural Lang
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
-- [Modules](#modules)
 - [Demo](#demo)
 - [Contributing](#contributing)
 - [License](#license)
@@ -25,6 +24,7 @@ Make sure to update the configuration in the following files:
 
 ## Usage
 
+## Demo
 
 ## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request with your changes. Make sure to write tests and update documentation where applicable.
