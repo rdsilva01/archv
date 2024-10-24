@@ -6,6 +6,7 @@ import spacy
 import torch
 import numpy as np
 import text_to_speech as tts
+import pyttsx3
 
 from transformers import AutoTokenizer, AutoModel
 
@@ -223,8 +224,8 @@ def get_text_to_speech(tts_type: str, text: str, language: str, output_file: str
 
     Supported engines:
     - 'text-to-speech': Uses the text-to-speech PyPI package.
-    - 'gcloud-tts': Placeholder for future Google Cloud TTS implementation.
-    - 'other-tts': Placeholder for any other TTS engine that might be added in the future.
+    - 'gcloud-tts': Google Cloud TTS implementation.
+    - 'pyttsx3': Uses pyttsx3 package, limited to English ('en').
     
     Raises:
         ValueError: If the `output_file` does not end with '.mp3'.
@@ -240,8 +241,28 @@ def get_text_to_speech(tts_type: str, text: str, language: str, output_file: str
     elif tts_type == 'gcloud-tts':
         print("Google Cloud TTS is not implemented yet.")
     
-    elif tts_type == 'other-tts':
-        print("Other TTS engine is not implemented yet.")
+    elif tts_type == 'pyttsx3':
+        engine = pyttsx3.init() # object creation
+
+        """ RATE"""
+        rate = engine.getProperty('rate')   # getting details of current speaking rate
+        print (rate)                        #printing current voice rate
+        engine.setProperty('rate', 125)     # setting up new voice rate
+
+        """VOLUME"""
+        volume = engine.getProperty('volume')   #getting to know current volume level (min=0 and max=1)
+        print (volume)                          #printing current volume level
+        engine.setProperty('volume',1.0)        # setting up volume level  between 0 and 1
+
+        """VOICE"""
+        voices = engine.getProperty('voices')       #getting details of current voice
+        #engine.setProperty('voice', voices[0].id)  #changing index, changes voices. o for male
+        engine.setProperty('voice', voices[1].id)   #changing index, changes voices. 1 for female
+
+        """Saving Voice to a file"""
+        engine.save_to_file(text, filename=output_file)
+        engine.runAndWait()
+        print(f"Text-to-speech with pyttsx3 conversion complete. Saved as {output_file}")
     
     else:
         raise ValueError(f"Unsupported TTS type: {tts_type}")
