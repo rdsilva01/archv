@@ -15,6 +15,7 @@ setup(
         'redis',
         'chunkipy',
         'text_to_speech',
+        'pyttsx3',
     ],
     dependency_links=[
         'git+https://github.com/diogocorreia01/PublicNewsArchive@main#egg=PublicNewsArchive',
