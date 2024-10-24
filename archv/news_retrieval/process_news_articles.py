@@ -246,3 +246,31 @@ def get_text_to_speech(tts_type: str, text: str, language: str, output_file: str
     else:
         raise ValueError(f"Unsupported TTS type: {tts_type}")
     
+    
+def get_news_articles_tts(news_articles: list, year: str, keys: list, language: str):
+    start_time = time.time()  
+    for i in range(len(news_articles)):
+        key_parts = ". ".join(
+            [news_articles[i].get(key, '').strip().rstrip('.') for key in keys if news_articles[i].get(key, '').strip()])
+        text = f"{key_parts}"
+
+        if not os.path.exists(f"data/{year}/"):
+            os.makedirs(f"data/{year}/")
+        filename = f'data/{year}/{news_articles[i]['nid']}.mp3'
+        get_text_to_speech(tts_type="text-to-speech", text=text, language=language, output_file=filename)
+
+        if i != 0 and i % 1 == 0: 
+            elapsed_time = time.time() - start_time
+            estimated_total_time = (elapsed_time / i) * len(news_articles)
+            time_left = estimated_total_time - elapsed_time
+
+            if time_left > 0:
+                minutes_left, seconds_left = divmod(time_left, 60)
+                time_left_str = f"{int(minutes_left)}m {int(seconds_left)}s"
+            else:
+                time_left_str = "Done!"
+
+            print(f"\r{100 * i / len(news_articles):.2f}% | Time left: {time_left_str}", end='')
+
+            if i == len(news_articles) - 1:
+                print(f"\r100.00% | Time left: Done!", end='')
