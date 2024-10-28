@@ -2,6 +2,9 @@
 
 archv is a Python package created to retrieve, process, and perform Natural Language Processing (NLP) on news articles. This package includes modules for extracting news information, embedding generation, and the implementation of a recommendation system of news articles by implementing a Redis VSS backend.
 
+## Google Colab
+Try out archv on a Google Colab notebook [Click here!](https://colab.research.google.com/drive/1fiT38OTmxc6onY5sbudJLm4-y62__9Vq?usp=sharing)
+
 ## Table of Contents
 - [Installation](#installation)
 - [Configuration](#configuration)
