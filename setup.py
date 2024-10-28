@@ -16,10 +16,12 @@ setup(
         'chunkipy',
         'text_to_speech',
         'pyttsx3',
+        'publicnewsarchive @ git+https://github.com/diogocorreia01/PublicNewsArchive@main#egg=PublicNewsArchive',
+        'yake @ git+https://github.com/LIAAD/yake@master#egg=yake'
     ],
     dependency_links=[
-        'git+https://github.com/diogocorreia01/PublicNewsArchive@main#egg=PublicNewsArchive',
-        'git+https://github.com/LIAAD/yake@master#egg=yake',
+        '',
+        '',
     ],
     author='rdsilva01',                    
     description='Preservation and Recommendation of Digital Newspapers Data',  
