@@ -1,15 +1,12 @@
 # archv
 
-archv is a Python package created to retrieve, process, and perform Natural Language Processing (NLP) on news articles. This package includes modules for extracting news information, embedding generation, and the implementation of a recommendation system of news articles by implementing a Redis VSS backend.
+`archv` is a Python package created to retrieve, process, and perform Natural Language Processing (NLP) on news articles. This package includes modules for extracting news information, embedding generation, and the implementation of a recommendation system of news articles by implementing a Redis VSS backend.
 
 ## Google Colab
-Try out archv on a Google Colab notebook [Click here!](https://colab.research.google.com/drive/1fiT38OTmxc6onY5sbudJLm4-y62__9Vq?usp=sharing)
+Try out `archv` on [Google Colab](https://colab.research.google.com/drive/1fiT38OTmxc6onY5sbudJLm4-y62__9Vq?usp=sharing).
 
 ## Table of Contents
 - [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [Demo](#demo)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -19,15 +16,6 @@ Try out archv on a Google Colab notebook [Click here!](https://colab.research.go
    ```bash
    pip install git+https://github.com/rdsilva01/archv.git
    ```
-   ...
-
-## Configuration
-Make sure to update the configuration in the following files:
-- docker-composer.yml (paths for Redis and the web demo)
-
-## Usage
-
-## Demo
 
 ## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request with your changes. Make sure to write tests and update documentation where applicable.
