@@ -12,7 +12,7 @@ Try out `archv` on [Google Colab](https://colab.research.google.com/drive/1fiT38
 
 ## Installation
 
-1. Clone the repository:
+1. Install the package via `pip`:
    ```bash
    pip install git+https://github.com/rdsilva01/archv.git
    ```
