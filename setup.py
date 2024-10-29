@@ -16,8 +16,7 @@ setup(
         'chunkipy',
         'text_to_speech',
         'pyttsx3',
-        'publicnewsarchive @ git+https://github.com/diogocorreia01/PublicNewsArchive@master#egg=PublicNewsArchive',
-        'yake @ git+https://github.com/LIAAD/yake@master#egg=yake'
+        'publicnewsarchive @ git+https://github.com/diogocorreia01/PublicNewsArchive@master#egg=PublicNewsArchive'
     ],
     dependency_links=[
         '',
