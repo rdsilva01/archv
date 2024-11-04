@@ -185,10 +185,17 @@ def get_news_articles_data(urls: list, year: str, filename: str, debug: bool, **
         news_article = {
              "nid": len(news_articles_list),
              "og_url": urls[i]}
+        
         for category, selectors in ListOfTags.items():
             tag = selectors['tag']
-            html_class = selectors['class']
-            html_id = selectors['id']
+            html_class = selectors.get('class')
+            html_id = selectors.get('id')
+            
+            # check if article_section is None
+            if article_section is None:
+                if debug:
+                    print(f"Warning: article_section not found for {category}")
+                continue 
             
             if html_id:
                 element = article_section.find(tag, id=html_id)
@@ -197,15 +204,17 @@ def get_news_articles_data(urls: list, year: str, filename: str, debug: bool, **
             else:
                 element = article_section.find(tag)  # if neither id nor class is specified, just find the tag
 
-            if element != None:
+            if element is not None:
                 if tag == "img":
                     text = element.get('src')
                 else:
                     text = re.sub(r'\s+', ' ', element.get_text()).strip()
-                    clean(text, )
-                    
-                news_article[category] = text if element else None
-
+                    clean(text)
+                
+                news_article[category] = text
+            else:
+                if debug:
+                    print(f"Warning: Element with tag '{tag}', id '{html_id}', class '{html_class}' not found for {category}")
         news_articles_list.append(news_article)
         if debug == True:
             if i != 0 and i % 1 == 0: 
