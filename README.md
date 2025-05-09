@@ -21,4 +21,16 @@ Try out `archv` on [Google Colab](https://colab.research.google.com/drive/1fiT38
 Contributions are welcome! Please fork the repository and submit a pull request with your changes. Make sure to write tests and update documentation where applicable.
 
 ## License  
-This project is licenced under the ??? License. See LICENSE file for more details.
+This project is licensed under the MIT License. See LICENSE file for more details.
+
+## Citation
+If you use `archv` in your research, please cite:
+
+```bibtex
+@inproceedings{silva2025rebuilding,
+  author    = {Rodrigo Silva and Ricardo Campos},
+  title     = {Rebuilding the Past: Reconstructing Portuguese News Outlets with Web Archives},
+  booktitle = {Advances in Information Retrieval (ECIR)},
+  year      = {2025},
+  doi       = {10.1007/978-3-031-88720-8_15}
+}
